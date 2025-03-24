@@ -1740,11 +1740,10 @@ GameObject:
   m_Component:
   - component: {fileID: 106507331}
   - component: {fileID: 106507330}
-  - component: {fileID: 106507332}
+  - component: {fileID: 106507333}
   - component: {fileID: 106507327}
-  - component: {fileID: 106507328}
   m_Layer: 8
-  m_Name: Hexagon Pointed-Top
+  m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1795,32 +1794,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8828125, y: 1}
   m_EdgeRadius: 0
---- !u!114 &106507328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106507326}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5228ad8ffefe0394e94e49fab902b1f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  z_Filter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 64
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
 --- !u!212 &106507330
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1888,7 +1861,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &106507332
+--- !u!114 &106507333
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1897,7 +1870,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 106507326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa5c311fe45ae6f4690efcf835542dae, type: 3}
+  m_Script: {fileID: 11500000, guid: 5228ad8ffefe0394e94e49fab902b1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   z_Filter:
@@ -2132,7 +2105,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &723799808
 Rigidbody2D:
