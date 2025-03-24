@@ -22,7 +22,7 @@ public class CollidableObject : MonoBehaviour
                OnCollided(o.gameObject);
           }
      }
-   
+
      protected virtual void OnCollided(GameObject collidedObject)
      {
           Debug.Log("Collided with "+ collidedObject.name);

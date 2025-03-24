@@ -28,12 +28,6 @@ public class MovementTest : MonoBehaviour
         // Cache it in a vector
         Vector2 moveDelta = new Vector2(moveX, moveY);
         
-        // Convert input to isometric movement
-        // Vector3 moveInput = new Vector3(moveX, moveY, 0).normalized;
-
-        // Move the character
-        // transform.position += moveInput * MoveSpeed * Time.deltaTime;
-
         // Flip the player according to the movement direction
         if(moveDelta.x > 0)
         {
