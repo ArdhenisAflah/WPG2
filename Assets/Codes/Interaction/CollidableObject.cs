@@ -7,7 +7,7 @@ public class CollidableObject : MonoBehaviour
      private Collider2D z_Collider;
      [SerializeField]
      private ContactFilter2D z_Filter;
-     private List<Collider2D> z_CollidabledObjects = new List<Collider2D>(1);
+     private List<Collider2D> z_CollidedObjects = new List<Collider2D>(1);
 
      protected virtual void Start()
      {
@@ -16,13 +16,13 @@ public class CollidableObject : MonoBehaviour
 
      protected virtual void update()
      {
-          z_Collider.OverlapCollider(z_Filter, z_CollidabledObjects);
-          foreach (var o in z_CollidabledObjects)
+          z_Collider.OverlapCollider(z_Filter, z_CollidedObjects);
+          foreach (var o in z_CollidedObjects)
           {
                OnCollided(o.gameObject);
           }
      }
-   
+
      protected virtual void OnCollided(GameObject collidedObject)
      {
           Debug.Log("Collided with "+ collidedObject.name);
