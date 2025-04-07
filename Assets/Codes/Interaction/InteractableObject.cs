@@ -2,24 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableObject : CollidableObject
+public class InteractableObject : MonoBehaviour
 {
-    private bool z_Interacted = false;
+    // private bool z_Interacted = false;
 
-    protected override void OnCollided(GameObject collidedObject)
+    // protected override void OnCollided(GameObject collidedObject)
+    // {
+    //     if (Input.GetKey(KeyCode.E))
+    //     {
+    //         OnInteract();
+    //     }
+    // }
+
+    // protected virtual void OnInteract()
+    // {
+    //     if (!z_Interacted)
+    //     {
+    //         z_Interacted = true;
+    //         Debug.Log("Interated With" + name);
+    //     }
+    // }
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Input.GetKey(KeyCode.E))
-        {
-            OnInteract();
-        }
+       Debug.Log("Entering interactable zone!");
     }
+   
 
-    protected virtual void OnInteract()
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        if (!z_Interacted)
-        {
-            z_Interacted = true;
-            Debug.Log("Interated With" + name);
-        }
+        Debug.Log("Leave interactable zone!");
     }
 }
