@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour, IInteractable
 {
-    public bool IsOpened {get; private set;}
+    public bool IsOpened { get; private set; }
+    public GameObject TypingMinigame;
+    public MonoBehaviour[] scriptsToDisable;
 
     public bool CanInteract()
     {
@@ -16,6 +18,13 @@ public class Chest : MonoBehaviour, IInteractable
         Debug.Log("Interacting with Chest");
         if (!CanInteract()) return;
         SetOpened(true);
+        // set minigame aktif
+        TypingMinigame.SetActive(true);
+        // ketika minigame aktif set skrip movement disable
+        foreach (MonoBehaviour script in scriptsToDisable)
+        {
+            script.enabled = false;
+        }
     }
 
     public void SetOpened(bool opened)
