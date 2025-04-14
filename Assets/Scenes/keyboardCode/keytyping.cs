@@ -10,18 +10,18 @@ public class keytyping : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             // ganti png sprite to pressed
             this.gameObject.GetComponent<SpriteRenderer>().sprite = keyPressed;
         }
-        if(Input.GetKeyUp(KeyCode.Q))
+        if (Input.GetKeyUp(KeyCode.Q))
         {
             //ganti png sprite to normal
             this.gameObject.GetComponent<SpriteRenderer>().sprite = keyUnpress;
