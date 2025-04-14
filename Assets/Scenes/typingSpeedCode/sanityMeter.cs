@@ -11,6 +11,7 @@ public class sanityMeter : MonoBehaviour
     GameObject sliderObj;
     public static Slider stt;
 
+
     void Start()
     {
         stt = sliderObj.GetComponent<Slider>();

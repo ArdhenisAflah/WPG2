@@ -10,14 +10,14 @@ public class CodeManagerKeyboard : MonoBehaviour
     public Dictionary<KeyCode, Sprite> normalSprites = new Dictionary<KeyCode, Sprite>();
     public List<Sprite> pressedAssets = new List<Sprite>();
     public Dictionary<KeyCode, Sprite> pressedSprites = new Dictionary<KeyCode, Sprite>();
-    
+
 
     // event system action
     public static event Action<string> OnClickKeyBoard;
     public static event Action OnClickBackSpace;
     void Start()
     {
-        int counterPressedAssets =0;
+        int counterPressedAssets = 0;
         // Initialize sprite renderers for each key
         foreach (KeyCode key in keyList)
         {
@@ -41,17 +41,45 @@ public class CodeManagerKeyboard : MonoBehaviour
             {
                 if (pressedSprites.ContainsKey(key))
                     // track which one key..
-                    if(key != KeyCode.Backspace){
+                    if (key != KeyCode.Backspace)
+                    {
                         OnClickKeyBoard?.Invoke(key.ToString().ToLower());
                     }
-                    keySprites[key].sprite = pressedSprites[key]; // Change to pressed sprite
+                keySprites[key].sprite = pressedSprites[key]; // Change to pressed sprite
             }
             if (Input.GetKeyUp(key) && keySprites.ContainsKey(key))
             {
                 keySprites[key].sprite = normalSprites[key]; // Revert to normal sprite
             }
 
-            if(Input.GetKeyDown(key) && key == KeyCode.Backspace)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+            if (Input.GetKeyDown(key) && key == KeyCode.Backspace)
             {
                 OnClickBackSpace?.Invoke();
             }
