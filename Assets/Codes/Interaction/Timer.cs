@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public Text TimerText;
+    public TMP_Text TimerText;
+    public TMP_Text DayText;
     
-	private float SecondsCount;
+	private float SecondCount;
 	private int MinuteCount;
 	private int HourCount;
     private int DayCount;
@@ -27,13 +29,14 @@ public class Timer : MonoBehaviour
     public void UpdateTimerUI()
     {
 		//set timer UI
-		SecondsCount += Time.deltaTime * 2;
-		TimerText.text = HourCount +":00";
+		SecondCount += Time.deltaTime * 2;
+		TimerText.text = HourCount + ":" + MinuteCount + ":" + SecondCount;
+        DayText.text = "Day " + DayCount;
 		
-        if(SecondsCount >= 60)
+        if(SecondCount >= 60)
         {
 			MinuteCount++;
-			SecondsCount = 0;
+			SecondCount = 0;
 		}
         else if(MinuteCount >= 60)
         {
