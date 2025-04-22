@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - 0
-  - 1
   - collidertyping1
+  - Floor & Wall
+  - Room Waypoint
   layers:
   - Default
   - TransparentFX

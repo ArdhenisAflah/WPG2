@@ -5,28 +5,31 @@ using UnityEngine.InputSystem;
 
 public class InteractionDetector : MonoBehaviour
 {
-    private IInteractable InteractableInRange = null;
+    private I_Interactable InteractableInRange = null;
 
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
+            // Check if Player presses Interact Key
             InteractableInRange?.Interact();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out IInteractable interactable) && interactable.CanInteract())
+        if (collision.TryGetComponent(out I_Interactable interactable) && interactable.CanInteract())
         {
+            // Sets the closest object as interactable
             InteractableInRange = interactable;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out IInteractable interactable) && interactable == InteractableInRange)
+        if (collision.TryGetComponent(out I_Interactable interactable) && interactable == InteractableInRange)
         {
+            // Sets nothing as interactable
             InteractableInRange = null;
         }
     }

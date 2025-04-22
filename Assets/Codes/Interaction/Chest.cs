@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Chest : MonoBehaviour, IInteractable
+public class Chest : MonoBehaviour, I_Interactable
 {
     public bool IsOpened { get; private set; }
     public GameObject TypingMinigame;
@@ -21,18 +21,19 @@ public class Chest : MonoBehaviour, IInteractable
     }
     public bool CanInteract()
     {
+        // Chest is interactable
         return true;
     }
 
     public void setActiveMovementScriptAgain()
     {
-        // ketika minigame aktif set skrip movement disable
+        // Ketika minigame aktif set skrip movement disable
         foreach (MonoBehaviour script in scriptsToDisable)
         {
             script.enabled = true;
         }
 
-        // kita reset anakan typing game (anakan panel jadi 0 lagi)
+        // Kita reset anakan typing game (anakan panel jadi 0 lagi)
         DestroyAllChildren(TypingMinigame.transform);
         // Reset the game or show a game-over screen
         TypingMinigame.SetActive(false);
@@ -50,20 +51,15 @@ public class Chest : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        // if (!CanInteract()) return;
-        // SetOpened(true);
         Debug.Log("Interacting with Chest");
-        // set minigame aktif
+        
+        // Set minigame aktif
         TypingMinigame.SetActive(true);
-        // ketika minigame aktif set skrip movement disable
+        
+        // Ketika minigame aktif set skrip movement disable
         // foreach (MonoBehaviour script in scriptsToDisable)
         // {
         //     script.enabled = false;
         // }
-    }
-
-    public void SetOpened(bool opened)
-    {
-        IsOpened = opened;
     }
 }
