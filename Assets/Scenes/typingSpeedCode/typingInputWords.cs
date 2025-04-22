@@ -7,6 +7,7 @@ using UnityEngine;
 public class typingInputWords : MonoBehaviour
 {
     public static event Action<string> OnCheckWord;
+    public static event Action<string> OnHighlightWord;
 
     void Start()
     {
@@ -17,5 +18,10 @@ public class typingInputWords : MonoBehaviour
         // checking if the word type player is correct!.
         OnCheckWord?.Invoke(res);
         this.GetComponent<TMP_InputField>().ActivateInputField();
+    }
+
+    public void OnTypingEach(string res)
+    {
+        OnHighlightWord?.Invoke(res);
     }
 }

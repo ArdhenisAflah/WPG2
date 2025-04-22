@@ -13,6 +13,9 @@ public class WordsSpawnManager : MonoBehaviour
 
     public static List<int> wordGoodused = new List<int>();
     public static List<int> wordBaddused = new List<int>();
+
+
+    public List<RectTransform> spawnPosition = new List<RectTransform>();
     void Start()
     {
     }
@@ -48,8 +51,9 @@ public class WordsSpawnManager : MonoBehaviour
                 int randItem = Random.Range(0, typingDB.dBWords[0].good.Length);
                 if (!wordGoodused.Contains(randItem))
                 {
+                    int randSpawnPos = Random.Range(0, spawnPosition.Count);
                     // spawn at random position according to resolution brooo
-                    Vector3 pos = new Vector3(transform.position.x - Random.Range(300, 1200), transform.position.y, 0);
+                    Vector3 pos = new Vector3(spawnPosition[randSpawnPos].anchoredPosition.x, spawnPosition[randSpawnPos].anchoredPosition.y, 0);
                     // spawn text inside a canvas (range 1280(right most) to -1280(leftmost) for X, and for Y is 720(up) and -720(bottom))
                     GameObject text = Instantiate(textPrefab, pos, Quaternion.identity);
                     // set string label and index to gameObject.
@@ -62,13 +66,14 @@ public class WordsSpawnManager : MonoBehaviour
                     wordGoodused.Add(randItem);
                 }
             }
-            if (randomWords == 1)
+            else if (randomWords == 1)
             {
                 int randItem = Random.Range(0, typingDB.dBWords[0].bad.Length);
                 if (!wordBaddused.Contains(randItem))
                 {
+                    int randSpawnPos = Random.Range(0, spawnPosition.Count);
                     // spawn at random position according to resolution brooo
-                    Vector3 pos = new Vector3(transform.position.x - Random.Range(300, 1200), transform.position.y, 0);
+                    Vector3 pos = new Vector3(spawnPosition[randSpawnPos].anchoredPosition.x, spawnPosition[randSpawnPos].anchoredPosition.y, 0);
                     // spawn text inside a canvas (range 1280(right most) to -1280(leftmost) for X, and for Y is 720(up) and -720(bottom))
                     GameObject text = Instantiate(textPrefab, pos, Quaternion.identity);
                     text.tag = "1";
@@ -83,7 +88,7 @@ public class WordsSpawnManager : MonoBehaviour
             }
 
             // wait so make it delay not continously crazy amount.
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
         }
     }
 }

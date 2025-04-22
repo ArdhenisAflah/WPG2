@@ -14,11 +14,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dBWords:
   - good:
-    - HAI
-    - HAHHAHA
-    - HEHEHEHE
+    - Aman
+    - Damai
+    - Baik
+    - Jujur
+    - Bijak
+    - Fakta
+    - Valid
+    - Tenang
+    - Sopan
+    - Benar
     bad:
-    - KAMU JELEK
-    - WOII GOBLK
-    - MATI KAMU
+    - Fomo
+    - Bodoh
+    - Caper
+    - Hina
+    - Benci
+    - Toxic
+    - Julid
+    - Hujat
+    - Malas
+    - Palsu
+  - good:
+    - Aman
+    - Damai
+    - Baik
+    - Jujur
+    - Bijak
+    - Fakta
+    - Valid
+    - Tenang
+    - Sopan
+    - Benar
+    bad:
+    - Fomo
+    - Bodoh
+    - Caper
+    - Hina
+    - Benci
+    - Toxic
+    - Julid
+    - Hujat
+    - Malas
+    - Palsu
   level: 1
